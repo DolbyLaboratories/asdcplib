@@ -19,3 +19,16 @@ jobs:
       run: ./configure --enable-as-02
     - name: make
       run: make
+
+  build_ubuntu_cmake:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: cmake
+      working-directory: build
+      run: cmake ..
+    - name: make
+      working-directory: build
+      run: make
