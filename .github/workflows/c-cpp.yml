@@ -26,10 +26,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: dependencies
-      run: sudo apt-get update && sudo apt-get install -y
-        cmake
-        libxerces-c-dev
     - name: Create build dir
       run: mkdir build
     - name: cmake
