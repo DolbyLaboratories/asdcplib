@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build_ubuntu_autoconf:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: autoreconf
+      run: autoreconf -if
+    - name: configure
+      run: ./configure --enable-as-02
+    - name: make
+      run: make
